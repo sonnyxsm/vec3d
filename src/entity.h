@@ -2,30 +2,28 @@
 #include <raymath.h>
 
 typedef struct {
-	ModelAnimation *control;
-	ModelAnimation anim;
-
-	int state;
-	unsigned int i;
-	unsigned int frame;
+        ModelAnimation *control;
+        ModelAnimation anim;
+        int state;
+        unsigned int i;
+        unsigned int frame;
 } anim_t; 
 
 typedef struct {
-	const char *worldmodel;
+        const char *worldmodel;
 
-	Model model;
-	Mesh collide;
-	anim_t anim;
-	
-	Matrix matrot;
-	Vector3 pos, rot;
-	Vector3 modelscale;
-	Vector3 direction;
-	float angle;
+        Model model;
+        Mesh collide;
+        anim_t anim;
 
-	float health;
+        Matrix matrot;
+        Vector3 pos, rot;
+        Vector3 modelscale;
+        Vector3 direction;
+        float angle;
 
-	int i;
+        float health;
+        int i;
 } entity_t;
 
 void ent_create(entity_t *, const char *, Vector3, Vector3, Vector3);

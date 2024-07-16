@@ -3,8 +3,8 @@
 void ent_create(entity_t *e, const char *modelpath, Vector3 position, Vector3 rotation, Vector3 scale)
 {
         e->worldmodel = modelpath;
-        e->health = 100.f;
 
+        e->health = 100.f;
         e->anim.state = 0;
         e->anim.i = 0;
         e->anim.frame = 0;
@@ -12,8 +12,8 @@ void ent_create(entity_t *e, const char *modelpath, Vector3 position, Vector3 ro
         e->pos = position;
         e->rot = rotation;
         e->modelscale = scale;
-        e->angle = 0.f;
-        
+        e->angle = 0.f; 
+
         if (modelpath == "") {
                 /* do something... this is bad */
         }
