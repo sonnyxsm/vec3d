@@ -10,6 +10,7 @@ Contributors and PRs are welcome
 
 ### Dependencies
 
+- C99 Capable Compiler
 - raylib
 
 #### Build from Makefile
