@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include <raymath.h>
 
 typedef struct {
 	ModelAnimation *control;
@@ -24,8 +25,9 @@ typedef struct {
 
 	float health;
 
-	int index;
+	int i;
 } entity_t;
 
 void ent_create(entity_t *, const char *, Vector3, Vector3, Vector3);
 void ent_fire_anim(entity_t *, int);
+void ent_update(entity_t *);
