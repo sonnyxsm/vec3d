@@ -8,16 +8,17 @@ void v3d_create_context(int x, int y, int vsync, const char *title)
         SetTargetFPS(vsync);
 
         InitWindow(x, y, title);
-
 }
 
 int v3d_mainthread(void)
 {
-       for (;;) {
-               r_draw(); 
-       }
+        scene_t s1;
+        scene_create(&s1);
+        
+        for (;;) {
+                r_draw(); 
+        }
 
-       CloseWindow();
-
-       return 0;
+        CloseWindow();
+        return 0;
 }

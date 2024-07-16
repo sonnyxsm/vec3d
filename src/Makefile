@@ -6,7 +6,7 @@ CC = cc
 CFLAGS = -std=gnu99 
 LDFLAGS = -lraylib
 
-SRC = main.c engine.c render.c scene.c entity.c
+SRC = main.c engine.c render.c world.c
 OBJ = ${SRC:.c=.o}
 TARGET = a.out
 

@@ -1,4 +1,6 @@
-#include "entity.h"
+#include "world.h"
+
+#include <stdio.h>
 
 void ent_create(entity_t *e, const char *modelpath, Vector3 position, Vector3 rotation, Vector3 scale)
 {
@@ -30,9 +32,23 @@ void ent_set_anim(entity_t *e, int action)
 void ent_update(entity_t *e)
 {
         e->matrot = MatrixRotate(e->rot, DEG2RAD * e->angle);
-        e->direction = Vector3Transform((Vector3){ 0.0f, 0.0f, 1.0f }, e->matrot);
+        e->direction = Vector3Transform((Vector3){0.0f, 0.0f, 1.0f}, e->matrot);
         e->anim.anim = e->anim.control[e->anim.i];
-        e->anim.frame = (e->anim.frame + 1) % e->anim.anim.frameCount;
+        e->anim.frame = (e->anim.frame + 1)%e->anim.anim.frameCount;
 
         UpdateModelAnimation(e->model, e->anim.anim, e->anim.frame); 
 }
+
+void scene_create(scene_t *s)
+{
+        entity_t e1;
+        ent_create(&e1, "", (Vector3){0.0f, 0.0f, 0.0f}, (Vector3){0.0f, 0.0f, 0.0f}, (Vector3){0.0f, 0.0f, 0.0f}); /* testing */
+
+        for (int i = 0; i < 512; i++) {
+                
+        }
+}
+
+
+
+
