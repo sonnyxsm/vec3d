@@ -30,8 +30,7 @@ void ent_fire_anim(entity_t *e, int action)
 void ent_update(entity_t *e)
 {
         e->matrot = MatrixRotate(e->rot, DEG2RAD * e->angle);
-	e->direction = Vector3Transform((Vector3){ 0.0f, 0.0f, 1.0f }, e->matrot);
-        
+        e->direction = Vector3Transform((Vector3){ 0.0f, 0.0f, 1.0f }, e->matrot);
         e->anim.anim = e->anim.control[e->anim.i];
         e->anim.frame = (e->anim.frame + 1) % e->anim.anim.frameCount;
 

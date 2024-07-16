@@ -8,7 +8,7 @@ LDFLAGS = -lraylib
 
 SRC = main.c engine.c render.c scene.c entity.c
 OBJ = ${SRC:.c=.o}
-TARGET = game
+TARGET = a.out
 
 all: ${TARGET}
 
