@@ -22,9 +22,9 @@ void ent_create(entity_t *e, const char *modelpath, Vector3 position, Vector3 ro
         e->anim.control = LoadModelAnimations(e->worldmodel, &e->anim.state);
 }
 
-void ent_fire_anim(entity_t *e, int action)
+void ent_set_anim(entity_t *e, int action)
 {
-
+        e->anim.i = action;
 }
 
 void ent_update(entity_t *e)

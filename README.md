@@ -2,7 +2,7 @@
 
 ## A Work In Progress 3D Game Engine
 
-vec3D is a simple little game engine that attempts to emulate the style of Generation 5 Console Graphics (PlayStation 1, Nintendo 64)
+**vec3D** is a simple 3D engine built ontop of raylib, that attempts to simulate the style of generation 5 console graphics (PlayStation 1, Nintendo 64)
 
 Contributors and PRs are welcome
 
@@ -13,8 +13,8 @@ Contributors and PRs are welcome
 - raylib
 
 #### Build from Makefile
-"$ make"
+`$ make`
 
 #### Clean Solution
-"$ make clean"
+`$ make clean`
 
