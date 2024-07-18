@@ -41,11 +41,9 @@ void ent_update(entity_t *e)
 
 void scene_create(scene_t *s)
 {
-        entity_t e1;
-        ent_create(&e1, "", (Vector3){0.0f, 0.0f, 0.0f}, (Vector3){0.0f, 0.0f, 0.0f}, (Vector3){0.0f, 0.0f, 0.0f}); /* testing */
-
+        entity_t entities[512];
         for (int i = 0; i < 512; i++) {
-                
+                entities[i].health = 100.f;
         }
 }
 
