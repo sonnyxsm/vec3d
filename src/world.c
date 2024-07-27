@@ -37,35 +37,43 @@ void ent_update(entity_t *e)
         UpdateModelAnimation(e->model, e->anim.anim, e->anim.frame); 
 }
 
+void ent_draw(entity_t *e)
+{
+       DrawModelEx(e->model, e->pos, e->rot, e->angle, e->modelscale, WHITE); 
+}
+
 void scene_camera(scene_t *s, Vector3 position, Vector3 rotation, float up, float fov)
 {
         s->camera.position = position;
-	s->camera.target = rotation;
-	s->camera.up = (Vector3){0.0f, up, 0.0f};
+        s->camera.target = rotation;
+        s->camera.up = (Vector3){0.0f, up, 0.0f};
         s->camera.fovy = fov;
 }
 
 void scene_create(scene_t *s)
 {
-        int maxents; 
-        
-        maxents = 512; 
-        for (int i = 0; i < maxents; i++) {
-                
+        for (int i = 0; i < 1; i++) {
+               ent_create(&s->entitylist[i], "1.glb", ENT_DEFAULT_POS, ENT_DEFAULT_ROT, ENT_DEFAULT_MS);
         }
 }
 
 void scene_update(scene_t *s)
 {
-
+        for (int i = 0; i < 1; i++) {
+                ent_update(&s->entitylist[i]);
+        }
 }
 
 void scene_draw(scene_t *s)
 {
         BeginDrawing();
         ClearBackground(BLACK);
-        BeginMode3D(s->camera);
+        BeginMode3D(s->camera); 
         
+        for (int i = 0; i < 1; i++) {
+                ent_draw(&s->entitylist[i]);
+        }
+
         DrawGrid(100, 10.f);
 
         EndMode3D();
