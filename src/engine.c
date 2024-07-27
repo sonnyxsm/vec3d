@@ -13,8 +13,11 @@ void v3d_create_context(int x, int y, int vsync, const char *title)
 
 int v3d_mainthread(void)
 {
+        /* testing... move some logic out of here at some point */
+
         scene_t s1;
         scene_create(&s1);
+        scene_camera(&s1, (Vector3){0.f, 10.f, 10.f}, (Vector3){0.f, 0.f, 0.f}, 1.f, 60.f);
         
         for (;;) {
                 scene_update(&s1);
