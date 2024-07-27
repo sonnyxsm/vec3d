@@ -46,3 +46,5 @@ void ent_set_anim(entity_t *, int);
 void ent_update(entity_t *);
 
 void scene_create(scene_t *);
+void scene_update(scene_t *);
+void scene_draw(scene_t *);

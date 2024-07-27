@@ -1,9 +1,9 @@
 #include "world.h"
 
-#include <stdio.h>
-
 void ent_create(entity_t *e, const char *modelpath, Vector3 position, Vector3 rotation, Vector3 scale)
 {
+        e->i = 0;
+
         e->worldmodel = modelpath;
 
         e->health = 100.f;
@@ -15,6 +15,8 @@ void ent_create(entity_t *e, const char *modelpath, Vector3 position, Vector3 ro
         e->rot = rotation;
         e->modelscale = scale;
         e->angle = 0.f; 
+
+        e->i++;
 
         if (modelpath == "") {
                 /* do something... this is bad */
@@ -41,12 +43,22 @@ void ent_update(entity_t *e)
 
 void scene_create(scene_t *s)
 {
-        entity_t entities[512];
-        for (int i = 0; i < 512; i++) {
-                entities[i].health = 100.f;
+        int maxents = 512; 
+        for (int i = 0; i < maxents; i++) {
+                
         }
 }
 
+void scene_update(scene_t *s)
+{
 
+}
 
+void scene_draw(scene_t *s)
+{
+        BeginDrawing();
+        ClearBackground(BLACK);
+
+        EndDrawing();
+}
 

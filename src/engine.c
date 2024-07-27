@@ -1,4 +1,5 @@
 #include "engine.h"
+#include "world.h"
 
 void v3d_create_context(int x, int y, int vsync, const char *title)
 {
@@ -16,7 +17,8 @@ int v3d_mainthread(void)
         scene_create(&s1);
         
         for (;;) {
-                r_draw(); 
+                scene_update(&s1);
+                scene_draw(&s1); 
         }
 
         CloseWindow();
