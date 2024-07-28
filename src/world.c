@@ -42,7 +42,7 @@ void ent_draw(entity_t *e)
        DrawModelEx(e->model, e->pos, e->rot, e->angle, e->modelscale, WHITE); 
 }
 
-void ent_moveto(entity_t *e, Vector3 position)
+void ent_teleport(entity_t *e, Vector3 position)
 {
         e->pos.x = position.x;
         e->pos.y = position.y;
@@ -83,7 +83,7 @@ void scene_draw(scene_t *s)
         
         ent_set_anim(&s->entitylist[0], 3);
         ent_set_anim(&s->entitylist[1], 2);
-        ent_moveto(&s->entitylist[0], (Vector3){4.f, 0.f, 0.f});
+        ent_teleport(&s->entitylist[0], (Vector3){4.f, 0.f, 0.f});
         DrawGrid(100, 10.f);
 
         EndMode3D();
