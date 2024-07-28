@@ -3,8 +3,8 @@
 #
 
 CC = cc
-CFLAGS = -std=gnu99 
-LDFLAGS = -lraylib
+CFLAGS = -std=gnu99 -O2 
+LDFLAGS = -lm -lraylib
 
 SRC = main.c engine.c world.c
 OBJ = ${SRC:.c=.o}

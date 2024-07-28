@@ -42,6 +42,13 @@ void ent_draw(entity_t *e)
        DrawModelEx(e->model, e->pos, e->rot, e->angle, e->modelscale, WHITE); 
 }
 
+void ent_moveto(entity_t *e, Vector3 position)
+{
+        e->pos.x = position.x;
+        e->pos.y = position.y;
+        e->pos.z = position.z;
+}
+
 void scene_camera(scene_t *s, Vector3 position, Vector3 rotation, float up, float fov)
 {
         s->camera.position = position;
@@ -52,14 +59,14 @@ void scene_camera(scene_t *s, Vector3 position, Vector3 rotation, float up, floa
 
 void scene_create(scene_t *s)
 {
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 5; i++) {
                ent_create(&s->entitylist[i], "1.glb", ENT_DEFAULT_POS, ENT_DEFAULT_ROT, ENT_DEFAULT_MS);
         }
 }
 
 void scene_update(scene_t *s)
 {
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 5; i++) {
                 ent_update(&s->entitylist[i]);
         }
 }
@@ -70,10 +77,13 @@ void scene_draw(scene_t *s)
         ClearBackground(BLACK);
         BeginMode3D(s->camera); 
         
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 5; i++) {
                 ent_draw(&s->entitylist[i]);
         }
-
+        
+        ent_set_anim(&s->entitylist[0], 3);
+        ent_set_anim(&s->entitylist[1], 2);
+        ent_moveto(&s->entitylist[0], (Vector3){4.f, 0.f, 0.f});
         DrawGrid(100, 10.f);
 
         EndMode3D();

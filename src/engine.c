@@ -18,7 +18,7 @@ int v3d_mainthread(void)
         scene_t s1;
         scene_create(&s1);
         scene_camera(&s1, (Vector3){0.f, 10.f, 10.f}, (Vector3){0.f, 0.f, 0.f}, 1.f, 90.f);
-        
+
         for (;;) {
                 scene_update(&s1);
                 scene_draw(&s1); 
